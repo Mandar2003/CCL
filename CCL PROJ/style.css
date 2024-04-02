@@ -1,0 +1,204 @@
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+  }
+  .navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures the navbar appears above other content */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .navbar-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-brand img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  .navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .navbar-menu li {
+    margin-right: 20px;
+    position: relative;
+  }
+  .navbar-menu li:last-child {
+    margin-right: 0;
+  }
+  .navbar-menu li a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  .navbar-menu li a:hover {
+    background-color: #ddd;
+    color: #333;
+  }
+  /* Dropdown styles */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 8px 15px;
+    display: block;
+    text-decoration: none;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .login-btn, .signup-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 34px;
+    transition: background-color 0.3s ease;
+  }
+  .login-btn:hover, .signup-btn:hover {
+    background-color: #2980b9;
+  }
+.time {
+    color: white;
+    font-size: 1em;
+    margin-right: 15px;
+  }
+.logoname {
+    float: left;
+    font-weight: bolder;
+    font-size: 165%;
+    color: blue;
+    padding: 15px 22px;
+}
+
+
+.logoimg {
+    float: left;
+    padding: 14px 12px;
+    border-radius: 44%;
+}
+
+.header-btn {
+    float: right;
+    font-size: 128%;
+    border-radius: 30px;
+    background-color: rgb(29, 158, 57);
+    padding: 19px 6px;
+
+}
+
+.header-btn .sign-up:hover{
+    color: rgb(255, 0, 0);  
+}
+
+.header-btn .log-in:hover{
+    color: rgb(255, 0, 0);  
+}
+
+#marq {
+    color: rgb(255, 0, 0);
+    padding: 10px 35px;
+    font-weight: bolder;
+    font-size: 135%;
+}
+
+.div1 {
+    padding: 7px 6px;
+
+}
+
+.div1 img {
+    border-radius: 36%;
+    padding: 85px 125px;
+}
+
+.div2 {
+    display: block;
+    margin: 5px;
+    border: 1px;
+    float: left;
+    width: 460px;
+    padding: 108px 12px;
+  
+}
+
+.div2 img {
+    border-radius: 10%;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+    font-size: 115%;
+}
+
+.div3 {
+    display: block;
+    margin: 5px;
+    border: 1px;
+    float: left;
+    width: 460px;
+    padding: 108px 12px;
+}
+
+.div3 img {
+    border-radius: 17%;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+    font-size: 110%;
+}
+
+.img{
+    align-items: center;
+    margin-left: 240px;
+    justify-content: center;
+}
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculate</title>
+<style>
+  /* CSS styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #808080;
+  }
+  .navbar {
+    background-color: #333; /* Navbar background color */
+    overflow: hidden;
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  .navbar a:hover {
+    background-color: #ddd; /* Hover background color */
+    color: #333;
+  }
+  .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff; /* White container background color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Box shadow */
+    position: relative; /* Position relative for absolute positioning */
+    overflow: hidden; /* Overflow hidden to prevent overflow issues */
+  }
+  h1 {
+    text-align: center;
+    color: #333; /* Dark text color */
+    text-shadow: 1px 1px 1px #ccc; /* Text shadow */
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Label text color */
+  }
+  input[type="text"], input[type="number"] {
+    width: calc(100% - 12px);
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Input field background color */
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+ .calculate-btn:hover {
+            background-color: #0056b3;
+        }
+
+  .result {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 28px;
+    background-color: #F9EEEE; /* Result background color */
+    text-color:#ffffff;
+    border: 1px solid #333;
+  }
+  .logo {
+    position: absolute; /* Position absolute for positioning */
+    top: 27px; /* Adjust top position */
+    left: 98px; /* Adjust left position */
+    width: 64px; /* Set width */
+    height: 56px; /* Set height */
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden; /* Overflow hidden for circular shape */
+  }
+  .logo img {
+    width: 100%; /* Set image width to 100% */
+    height: auto; /* Set height to auto for aspect ratio */
+  }
+</style>
+</head>
+<body>
+<nav class="navbar">
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </nav>
+<div class="container">
+  <div class="logo">
+    <img src="Logo1.png" alt="MK Trading Logo">
+  </div>
+  <h1>MK Trading Software System</h1>
+  <form id="tradingForm">
+     <label for="totalCapital">Total Capital :</label>
+    <input type="number" id="totalCapital" required>
+    <label for="riskPerTrade">Risk Per Trade (%):</label>
+    <input type="text" id="riskPerTrade" required>
+    <label for="stockPrice">Stock Entry Price :</label>
+    <input type="text" id="stockPrice" required>
+    <label for="stopLoss">Stop Loss :</label>
+    <input type="text" id="stopLoss" required>
+    <label for="target">Target :</label>
+    <input type="text" id="target" required>
+    <button class="calculate-btn" type="submit">Calculate</button>
+  </form>
+  <div id="result" class="result"></div>
+</div>
+<script>
+  // JavaScript code
+  document.getElementById('tradingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var totalCapital = parseFloat(document.getElementById('totalCapital').value);
+    var riskPerTrade = parseFloat(document.getElementById('riskPerTrade').value) / 100;
+    var stockPrice = parseFloat(document.getElementById('stockPrice').value);
+    var stopLoss = parseFloat(document.getElementById('stopLoss').value);
+    var target = parseFloat(document.getElementById('target').value);
+
+    var riskAmount = totalCapital * riskPerTrade;
+    var riskPerShare = stockPrice - stopLoss;
+    var quantity = Math.floor(riskAmount / riskPerShare);
+    var capitalRequired = quantity * stockPrice;
+
+    var resultElement = document.getElementById('result');
+    resultElement.innerHTML = "<p>Quantity to be bought: " + quantity + "</p>";
+    resultElement.innerHTML += "<p>Capital required to buy that quantity : " + capitalRequired.toFixed(2) + "</p>";
+  });
+	function goBack() {
+            window.history.back();
+        }
+
+</script>
+</body>
+</html>
